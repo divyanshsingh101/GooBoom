@@ -101,7 +101,11 @@ app.use("/listings",listingRoute);// routes
 app.use("/listings/:id/reviews",reviewRoute); //routes
 app.use("/users",userRoute); // route 
 
-
+app.get("/",(req,res)=>{
+    console.log("redirecting to listings");
+    res.redirect("/listings");
+}
+    
 
 
 app.all("*",(req,res,next)=>{
