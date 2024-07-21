@@ -101,20 +101,6 @@ app.use("/listings",listingRoute);// routes
 app.use("/listings/:id/reviews",reviewRoute); //routes
 app.use("/users",userRoute); // route 
 
-// root route 
-app.get("/",root);
-
-// test route for user
-app.get("/demouser",async(req,res)=>{
-    let demoUser={
-        email:"abc@gmail.com",
-        username:"adolf hitler",
-
-    }
-
-   let registeredUser= await  User.register(demoUser,"password");
-   res.send(registeredUser);
-})
 
 
 
