@@ -104,7 +104,7 @@ app.use("/users",userRoute); // route
 app.get("/",(req,res)=>{
     console.log("redirecting to listings");
     res.redirect("/listings");
-}
+});
     
 
 
