@@ -1,0 +1,33 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="row col-8 offset-2">
+    <form action="/listings" method="post" class="needs-validation"  novalidate enctype="multipart/form-data" >
+    
+    
+    <h3>Create New Listing</h3>
+   <div ><label for="title" class="form-label">title:</label>
+    <input type="text" name="title" id="" class="form-control" required value="test"></div>
+   <div><label for="" class="form-label">description:</label> 
+    <textarea name="description" id=""  class="form-control" >test</textarea></div>
+   <div><label for="" class="form-label" >cost:</label>
+    <input type="number" name="price" id="" class="form-control" required value=123></div>
+    <div class="row">
+    <div class="col-md-4"><label for="" class="form-label" >country:</label>
+        <input type="text" name="country" id="" class="form-control" value="test"></div>
+   <div class="col-md-8"> <label for="" class="form-label">location:</label>
+    <input type="text" name="location" id="" class="form-control" value="test"></div>
+   </div>
+    
+   <div> <label for="" class="form-label">image</label>
+    <input type="file" name="image" id="" class="form-control" value="test"></div>
+    
+    <br>
+    <br>
+   <button class="btn btn-primary add-btn">submit</button>
+   
+   <br>
+   <br>
+   
+    </form>
+    </div>
+</body>

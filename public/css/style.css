@@ -1,0 +1,83 @@
+body{
+    margin:10px;
+    padding-top:50px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+.container{
+    flex: 1;
+    margin-top: 20px;
+}
+.navbar{
+    background-color: white !important;
+    height: 75px;
+}
+.search-box{
+    border:1px solid rgb(195, 193, 193);
+    padding:5px;
+    border-radius: 25px;
+}
+#search-btn{
+    border-radius: 25px !important;
+    background-color:#fe424d;
+    color: white;
+    border: none;
+}
+.alert{
+ position:relative;
+ top: 10px;
+}
+.fa-car{
+    color:#fe424d;
+}
+
+.f-info{
+    background-color:#ebebeb;
+    height:8rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:center;
+}
+.f-info-socials,.f-info-company,.f-info-links{
+    width: 100% ;
+    display: flex;
+    justify-content: center;
+    align-items: space-evenly;
+    color:grey;
+}
+.f-info-links a,.f-info-socials a{
+    color: grey;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.f-info-socials a:hover,.f-info-links a:hover{
+    color: black ;
+}
+#listing-a {
+    text-decoration: none !important;
+    color: black;
+}
+.listing-card{
+    border:none !important;
+}
+.card-img-top{
+    width: 100% !important;
+    object-fit: cover !important;
+    border-radius: 1rem !important;
+    height: 20rem !important;
+
+}
+.card:hover #listings-img{
+    opacity:.8 !important;
+    
+
+}
+.add-btn{
+    background-color: #fe424d !important;
+    border: none !important;
+}
+

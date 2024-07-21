@@ -1,0 +1,112 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<style>
+  .nav-inner{
+  display:flex;
+  justify-content: space-between;
+  align-items:flex-start;
+
+  }
+  .icon-div{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin:20px 30px;
+  }
+  .icon-text{
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 1rem;
+    color: rgb(101, 98, 98);
+  }
+  .icon-div > i{
+    font-size: 1.2rem;
+    color: rgb(74, 72, 72);
+    margin-bottom: 10px;
+  }
+  .nav-inner-icon{
+    display: flex;
+  }
+  .nav-inner-toogle {
+    margin:20px;
+    margin-top: 15px;
+    border:1px solid rgb(168, 165, 165);
+    border-radius: 10px;
+    display: flex; 
+    align-items: center; 
+    padding:10px 20px;
+  }
+  #flexSwitchCheckDefault{
+    height: 25px;
+    width: 30px;
+
+    
+  }
+  .taxes{
+    display:none;
+  }
+</style>
+
+<body>
+    <div class="nav-inner">
+      <div class="nav-inner-icon">
+      <div class="icon-div"><i class="fa-solid fa-fire"></i><p class="icon-text">Trending</p></div>
+      <div class="icon-div"><i class="fa-solid fa-water"></i><p class="icon-text">Lake</p></div>
+      <div class="icon-div"><i class="fa-solid fa-mountain-sun"></i><p class="icon-text">Mountains</p></div>
+      <div class="icon-div"><i class="fa-solid fa-tree-city"></i><p class="icon-text">Green city</p></div>
+      <div class="icon-div"> <i class="fa-brands fa-fort-awesome"></i><p class="icon-text">Fort</p></div>
+      <div class="icon-div"> <i class="fa-solid fa-ship"></i><p class="icon-text">Ship</p></div>
+      <div class="icon-div"><i class="fa-solid fa-tree"></i><p class="icon-text">Tree</p></div>
+      <div class="icon-div"><i class="fa-solid fa-city"></i><p class="icon-text">City</p></div>
+      <div class="icon-div"><i class="fa-solid fa-person-skiing"></i><p class="icon-text">Skiing</p></div>
+      </div>
+      <div class="nav-inner-toogle">
+        <div class="form-check-reverse form-switch">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Display taxes</label>
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+          
+        </div>
+      </div>
+    </div>
+    <ul>
+        <!-- <a href="/listings/new">enter new listing</a> -->
+         <div class="row ">
+        <% for(listing of allListing ){ %>
+            <div class="col">
+       <div class="card listing-card" style="width: 22rem;">
+        <a href="/listings/<%= listing._id%>" id="listing-a">
+            <img src="<%= listing.image.url%>" class="card-img-top" alt="..." id="listings-img">
+            <div class="card-body">
+                <h5 class="card-title"><%= listing.title%></h5>
+
+              <p class="card-text">	&#8377;<%= listing.price.toLocaleString("en-IN")%>/night <p class="taxes">+ 18% GST</p></p>
+            </div></a>
+          </div>
+          </div>
+          <%}%>
+          
+         </div>
+      
+    </ul>
+
+    <script>
+      let toggle=document.getElementById("flexSwitchCheckDefault");
+      toggle.addEventListener("click",()=>{
+        let taxes=document.querySelectorAll(".taxes");
+        for(tax of taxes){
+          console.log("tax");
+          console.log(tax.style.display);
+        if(tax.style.display!="block"){
+          tax.style.display="block";
+        }
+        else {
+          tax.style.display="none";
+        }
+      }
+      })
+    
+    
+    </script>
+</body>
+
+
+

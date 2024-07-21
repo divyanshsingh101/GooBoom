@@ -1,0 +1,28 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="row col-8 offset-2"> 
+    <h3>Edit Listing</h3>
+    <form action="/listings/<%=listing[0]._id%>?_method=PATCH" method="post" enctype="multipart/form-data">
+    <div>    
+   <label for="" class="form-label">title:</label>
+   <input type="text" class="form-control" name="title" id="" value="<%=listing[0].title%>"></div>
+   <div>
+   <label for="" class="form-label">description:</label>
+   <textarea name="description" class="form-control" id="" ><%=listing[0].description%></textarea></div>
+    <div> 
+   <label for="" class="form-label">cost: </label> <input type="number" class="form-control" name="price" id="" value="<%=listing[0].price%>"></div>
+   <div class="row">
+   <div class="col-md-4">
+    <label for="" class="form-label">country: </label><input type="text"  class="form-control" name="country" id="" value="<%=listing[0].country%>"></div>
+   <div class="col-md-8">
+   <label for="" class="form-label">location: </label><input type="text" class="form-control" name="location" id="" value="<%=listing[0].location%>"> </div>
+    </div>
+    <div><p>Uploaded image:</p><img src=<%=convImg%> alt=""></div>
+   <div>
+   <label for="" class="form-label">Upload image </label><input type="file"class="form-control" name="image" id=""> </div>
+   <button class="btn btn-dark mt-3">submit</button>
+   
+    </form>
+    </div>
+    <script src="/javascript/script.js"></script>
+</body>
